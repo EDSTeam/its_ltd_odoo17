@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="duotone_backend_theme.LoadingIndicatorNew" t-inherit="web.LoadingIndicator" t-inherit-mode="extension">
+        <xpath expr="//Transition/span" position="replace">
+            <div class="duotone-loader float-end">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <span class="" t-att-class="transition.className"><t t-if="env.debug" t-esc="' (' + state.count + ')'" /></span>
+        </xpath>
+    </t>
+</templates>

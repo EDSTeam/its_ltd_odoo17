@@ -1,0 +1,211 @@
+@mixin respond-to($screen) {
+    @if $screen == extra-large {
+        /*
+          ##Device = Desktops
+          ##Screen = 1281px to higher resolution desktops
+        */
+        @media (max-width:$break-extra-large + 1) {@content;}
+    }
+    @else if $screen == large {
+        /*
+          ##Device = Laptops, Desktops
+          ##Screen = B/w 1025px to 1280px
+        */
+        @media (min-width:$break-large + 1) and (max-width:$break-extra-large) {@content;}
+    }
+    @else if $screen == medium {
+        /*
+          ##Device = Tablets, Ipads (portrait)
+          ##Screen = B/w 768px to 1024px
+        */
+        @media (min-width:$break-medium) and (max-width:$break-large) {@content;}
+    }
+    @else if $screen == small {
+        /*
+          ##Device = Low Resolution Tablets, Mobiles (Landscape)
+          ##Screen = B/w 481px to 767px
+        */
+        @media (min-width:$break-small + 1) and (max-width:$break-medium - 1) {@content;}
+    }
+    @else if $screen == extra-small {
+        /*
+          ##Device = Most of the Smartphones Mobiles (Portrait)
+          ##Screen = B/w 320px to 480px
+        */
+        @media (min-width:$break-extra-small) and (max-width:$break-small) {@content;}
+    }
+}
+@mixin flex_unkown {
+    -webkit-flex: 1; /* Safari 6.1+ */
+    -ms-flex: 1; /* IE 10 */
+    flex: 1;
+}
+@mixin flex {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -moz-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -moz-box-direction: normal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+}
+
+@mixin full-screen-menu {
+    width: 100vw;
+    z-index: 1002;
+    display: flex;
+    flex-direction: column;
+    transform: none !important;
+    position: fixed !important;
+    height: calc(100vh - #{$o-navbar-height});
+    max-height: calc(100vh - #{$o-navbar-height});
+    top: $o-navbar-height !important;
+    right: 0 !important;
+    left: 0 !important;
+    overflow-x: hidden;
+    overflow-y: auto;
+    box-shadow: none;
+    border: none;
+}
+
+@mixin container-widths($max-widths: $container-max-widths, $breakpoints: $grid-breakpoints) {
+    @each $breakpoint, $container-max-width in $max-widths {
+      @include media-breakpoint-up($breakpoint, $breakpoints) {
+        width: $container-max-width;
+      }
+    }
+}
+
+@mixin disable-scrollbar {
+	scrollbar-width: none;
+	-ms-overflow-style: none;
+    &::-webkit-scrollbar {
+	  display: none;
+	}
+}
+
+@mixin input_color {
+    padding-top: 0;
+}
+@mixin wk-navbar {
+    & {
+        box-shadow: 1px 3px 4px 0px transparentize(#000000,.5);
+        position: absolute;
+        left: 0;
+        z-index: 100;
+        right: 100%;
+        height: 100vh;
+        overflow-y: auto;
+        overflow-x: hidden;
+        background-color: $color-background;
+        & li {
+            display: inline-block;
+            width: 100%;
+            float: unset;
+            border-bottom: 1px solid white;
+            & .dropdown-menu  {
+                position: static !important;
+                float: none;
+                transform: unset !important;
+                background-color: unset;
+                border: unset;
+                box-shadow: unset;
+                & > a {
+                    color: white;
+                }
+                .dropdown-header {
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}
+@mixin button-hover-1 {
+    z-index: 2;
+    &:before,
+    &:after {
+        z-index:-1;
+        content: '';
+        position: absolute;
+        top:0;
+        right:0px;
+        left:0;
+        bottom: 0px;
+        transition: .2s all;
+    }
+
+    &:before {
+        right: -50px;
+        border-right: 50px solid transparent;
+        border-bottom: 40px solid $btn-color-dark;
+        transform: translateX(-100%);
+    }
+
+    &:after {
+        left: -50px;
+        border-left: 50px solid transparent;
+        border-top: 40px solid $btn-color-dark;
+        transform: translateX(100%);
+    }
+
+    &:hover {
+        color: tint($btn-color, 75%);
+
+        &:before { transform: translateX(-49%); }
+        &:after { transform: translateX(49%); }
+    }
+}
+@mixin button-hover-2 {
+    z-index: 2;
+    &:before {
+        z-index: -1;
+        transition: all .4s;
+        content: '';
+        position: absolute;
+        top:0;
+        right:-50px;
+        left:0;
+        bottom: 0px;
+        border-right: 50px solid transparent;
+        border-bottom: 40px solid $btn-color-dark;
+        transform: translateX(-100%);
+    }
+    &:hover {
+        color: white;
+        border: 1px solid transparent;
+        &:before {
+            transform: translateX(0);
+        }
+    }
+}
+@mixin button-hover-3 {
+    z-index: 2;
+    &:before {
+        content: '';
+        position: absolute;
+        left:0;
+        top:0;
+        height: 100%;
+        // width: 50px;
+        background-color: lighten($color-foreground, 15%);
+        transform: translateX(-100%);
+        transition: all .6s;
+        z-index: -1;
+    }
+    &:hover {
+        color: white;
+        background-color: unset;
+        border: 1px solid transparent;
+        &:before {
+            content: '';
+            width:100%;
+            transform: translateX(0);
+        }
+    }
+}
+

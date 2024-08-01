@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2016-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<odoo noupdate="0">
+    <!-- All Css Files -->
+
+    <record id="duotone_backend_theme.wk_duotone_backend_theme_color_scss" model="ir.asset">
+        <field name="name">Duotone Backend Theme Color SCSS</field>
+        <field name="bundle">web.assets_backend</field>
+        <field name="path">duotone_backend_theme/static/src/scss/color.scss</field>
+        <field name="sequence">17</field>
+    </record>
+
+    <record id="duotone_backend_theme.wk_duotone_backend_theme_variables_scss" model="ir.asset">
+        <field name="name">Duotone Backend Theme Variables SCSS</field>
+        <field name="bundle">web.assets_backend</field>
+        <field name="path">duotone_backend_theme/static/src/scss/variables.scss</field>
+        <field name="sequence">18</field>
+    </record>
+
+    <record id="duotone_backend_theme.wk_duotone_backend_theme_dynamic_variables_scss" model="ir.asset">
+        <field name="name">Duotone Backend Theme Dynamic Variables SCSS</field>
+        <field name="bundle">web.assets_backend</field>
+        <field name="path">duotone_backend_theme/static/src/scss/customized/dynamic_variables.scss</field>
+        <field name="sequence">19</field>
+    </record>
+
+    <record id="duotone_backend_theme.wk_duotone_backend_theme_secondary_scss" model="ir.asset">
+        <field name="name">Duotone Backend Theme Secondary SCSS</field>
+        <field name="bundle">web.assets_backend</field>
+        <field name="path">duotone_backend_theme/static/src/scss/secondary.scss</field>
+        <field name="sequence">20</field>
+    </record>
+
+    <record id="duotone_backend_theme.wk_duotone_backend_theme_mixin_scss" model="ir.asset">
+        <field name="name">Duotone Backend Theme Mixin SCSS</field>
+        <field name="bundle">web.assets_backend</field>
+        <field name="path">duotone_backend_theme/static/src/scss/mixins.scss</field>
+        <field name="sequence">21</field>
+    </record>
+
+    <record id="duotone_backend_theme.wk_duotone_backend_theme_style_scss" model="ir.asset">
+        <field name="name">Duotone Backend Theme Style SCSS</field>
+        <field name="bundle">web.assets_backend</field>
+        <field name="path">duotone_backend_theme/static/src/scss/style.scss</field>
+        <field name="sequence">22</field>
+    </record>
+
+    <record id="duotone_backend_theme.wk_duotone_backend_theme_cogslider_xml" model="ir.asset">
+        <field name="name">Duotone Backend Theme Cogslider XML</field>
+        <field name="bundle">web.assets_backend</field>
+        <field name="path">duotone_backend_theme/static/src/xml/cogslider.xml</field>
+    </record>
+
+    <record id="duotone_backend_theme.wk_duotone_backend_theme_customize_menu_js" model="ir.asset">
+        <field name="name">Duotone Backend Theme Customize Menu JS</field>
+        <field name="bundle">web.assets_backend</field>
+        <field name="path">duotone_backend_theme/static/src/js/customize_menu.js</field>
+    </record>
+
+    <record id="duotone_backend_theme.wk_duotone_backend_theme_fuse_js" model="ir.asset">
+        <field name="name">Duotone Backend Theme Fuse JS</field>
+        <field name="bundle">web.assets_backend</field>
+        <field name="path">duotone_backend_theme/static/src/js/fuse.js</field>
+    </record>
+
+    <record id="duotone_backend_theme.wk_duotone_backend_theme_style_css" model="ir.asset">
+        <field name="name">Duotone Backend Theme Style CSS</field>
+        <field name="bundle">web.assets_backend</field>
+        <field name="path">duotone_backend_theme/static/src/css/style.css</field>
+    </record>
+
+    <record id="duotone_backend_theme.wk_duotone_backend_theme_appmenu_xml" model="ir.asset">
+        <field name="name">Duotone Backend Theme AppMenu XML</field>
+        <field name="bundle">web.assets_backend</field>
+        <field name="path">duotone_backend_theme/static/src/js/appMenu/appMenu.xml</field>
+    </record>
+
+    <record id="duotone_backend_theme.wk_duotone_backend_theme_appmenu_js" model="ir.asset">
+        <field name="name">Duotone Backend Theme AppMenu JS</field>
+        <field name="bundle">web.assets_backend</field>
+        <field name="path">duotone_backend_theme/static/src/js/appMenu/appMenu.js</field>
+    </record>
+
+    <record id="duotone_backend_theme.wk_duotone_backend_theme_appmenu_scss" model="ir.asset">
+        <field name="name">Duotone Backend Theme AppMenu SCSS</field>
+        <field name="bundle">web.assets_backend</field>
+        <field name="path">duotone_backend_theme/static/src/js/appMenu/appMenu.scss</field>
+        <field name="sequence">23</field>
+    </record>
+
+    <record id="duotone_backend_theme.wk_duotone_backend_theme_customnavbar_scss" model="ir.asset">
+        <field name="name">Duotone Backend Theme Custom Navbar SCSS</field>
+        <field name="bundle">web.assets_backend</field>
+        <field name="path">duotone_backend_theme/static/src/js/customNavbar/customNavbar.scss</field>
+        <field name="sequence">24</field>
+    </record>
+
+    <record id="duotone_backend_theme.wk_duotone_backend_theme_appsidebar_xml" model="ir.asset">
+        <field name="name">Duotone Backend Theme AppSidebar XML</field>
+        <field name="bundle">web.assets_backend</field>
+        <field name="path">duotone_backend_theme/static/src/js/appsidebar/appSideBar.xml</field>
+    </record>
+
+    <record id="duotone_backend_theme.wk_duotone_backend_theme_appsidebar_scss" model="ir.asset">
+        <field name="name">Duotone Backend Theme AppSideBar SCSS</field>
+        <field name="bundle">web.assets_backend</field>
+        <field name="path">duotone_backend_theme/static/src/js/appsidebar/appsidebar.scss</field>
+        <field name="sequence">25</field>
+    </record>
+
+    <record id="duotone_backend_theme.wk_duotone_backend_theme_customnavbar_xml" model="ir.asset">
+        <field name="name">Duotone Backend Theme Custom Navbar XML</field>
+        <field name="bundle">web.assets_backend</field>
+        <field name="path">duotone_backend_theme/static/src/js/customNavbar/customNavbar.xml</field>
+    </record>
+
+    <record id="duotone_backend_theme.wk_duotone_backend_theme_customnavbar_js" model="ir.asset">
+        <field name="name">Duotone Backend Theme Custom Navbar JS</field>
+        <field name="bundle">web.assets_backend</field>
+        <field name="path">duotone_backend_theme/static/src/js/customNavbar/customNavbar.js</field>
+    </record>
+
+</odoo>

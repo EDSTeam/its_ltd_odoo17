@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Copyright (c) 2017-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+    <!-- See LICENSE file for full copyright and licensing details. -->
+
+    <template id="webclient_bootstrap" inherit_id="web.webclient_bootstrap">
+        <xpath expr="//t[@t-set='head']" position="after">
+            <t t-set="head_duotone_backend_theme">
+                <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+                <link href="https://fonts.googleapis.com/css?family=KoHo|Lato|Montserrat|Open+Sans|Oxygen|Raleway|Roboto|Noto+Sans|Play" rel="stylesheet"/>
+            </t>
+            <t t-set="head" t-value="head_duotone_backend_theme + (head or '')" />
+        </xpath>
+    </template>
+</odoo>

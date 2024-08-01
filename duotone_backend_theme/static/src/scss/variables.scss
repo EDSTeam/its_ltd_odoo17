@@ -1,0 +1,40 @@
+/* Copyright (c) 2015-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) */
+/* See LICENSE file for full copyright and licensing details. */
+/* License URL : <https://store.webkul.com/license.html/> */
+
+/*
+// Media Queries Variables
+*/
+// @import url('/get_color');
+$break-extra-small: 320px;
+$break-small: 480px;
+$break-medium: 768px;
+$break-large: 1024px;
+$break-extra-large: 1280px;
+$btn-color-dark: white;//dummy
+$btn-color: white;//dummy
+
+$brand-gradient-start: lighten($odoo-brand, 10%);
+$brand-gradient-end: lighten($odoo-brand, 20%);
+
+$duo-dynamic-variables: () !default;
+
+$brand-gradient: linear-gradient(to right bottom, $brand-gradient-start, $brand-gradient-end);
+
+$font-family-sans-serif: 'Roboto', 'Noto';
+
+$border-radius: 0;
+$border-radius-lg: 0;
+$border-radius-sm: 0;
+
+$link-color: darken($primary-brand, 8%);
+
+$sidebar-large-width: 147px;
+$sidebar-small-width: 55px;
+
+$form-min-width: 835px;
+$chatter-min-width: 550px;
+$chatter-max-width: 600px;
+
+$o-list-footer-bg-color: $odoo-brand;
+

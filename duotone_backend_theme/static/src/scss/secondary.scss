@@ -1,0 +1,12 @@
+/* Copyright (c) 2015-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) */
+/* See LICENSE file for full copyright and licensing details. */
+/* License URL : <https://store.webkul.com/license.html/> */
+
+
+$color-foreground: map-get($duo-dynamic-variables, 'foreground_color') or #F77DBA;
+$color-background: map-get($duo-dynamic-variables, 'background_color') or #474747;
+$font: map-get($duo-dynamic-variables, 'font');
+$google-fonts: map-get($duo-dynamic-variables, 'google_fonts');
+$opacity: map-get($duo-dynamic-variables, 'opacity');
+$bck_img: map-get($duo-dynamic-variables, 'bck_img');
+$btn_type: map-get($duo-dynamic-variables, 'button_type') or 4;

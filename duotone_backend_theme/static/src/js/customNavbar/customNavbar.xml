@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- Copyright (c) 2015-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- "License URL : <https://store.webkul.com/license.html/>" -->
+
+<templates xml:space="preserve">
+
+	<t t-name="duotone_backend_theme.customNavBar" t-inherit="web.NavBar" t-inherit-mode="extension">
+		<xpath expr="//t[@t-call='web.NavBar.AppsMenu']" position="replace">
+			<t t-set="apps" t-value="menuService.getApps()" />
+			<Dropdown hotkey="'h'" title="'home_duotone_menu'" class="'o_navbar_apps_menu'">
+				<t t-set-slot="toggler">
+					<i class="oi oi-apps" />
+				</t>
+				<DropdownItem t-foreach="apps" t-as="app" t-key="app.id" href="getMenuItemHref(app)" class="{ 'o_app': true, focus: menuService.getCurrentApp() === app }" dataset="{ menuXmlid: app.xmlid, section: app.id }" onSelected="() => this.onNavBarDropdownItemSelection(app)">
+				<t t-debug="pdb"/>
+					<a t-on-click.prevent="">
+						<img t-if="app.webIcon.includes('.png')" class="wk_app_icon rounded-3" t-attf-src="data:image/png;base64,{{ app.webIconData }}" />
+						<img t-if="app.webIcon.includes('.svg')" class="wk_app_icon" t-attf-src="data:image/svg+xml;base64,{{app.webIconData}}" />
+						<span class="wk_app_name" t-attf-style="mix-blend-mode: {{ backgroundBlendMode }};">
+							<t t-esc="app.name"/>
+						</span>
+					</a>
+				</DropdownItem>
+			</Dropdown>
+		</xpath>
+
+		<xpath expr="//nav" position="inside">
+			<t t-call="duotone_backend_theme.AppSideBar"/>
+		</xpath>
+		<xpath expr="//t[@t-call='web.NavBar.SectionsMenu']" position="attributes">
+			<attribute name="t-if">currentAppSections.length</attribute>
+		</xpath>
+	</t>
+</templates>

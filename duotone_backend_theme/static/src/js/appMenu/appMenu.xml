@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- Copyright (c) 2015-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- "License URL : <https://store.webkul.com/license.html/>" -->
+
+<templates xml:space="preserve">
+    <t t-name="duotone_backend_theme.AppMenu" t-inherit="web.Dropdown" t-inherit-mode="extension">
+        <xpath expr="//div[@t-ref='menuRef']" position="replace">
+            <div t-if="state.open and props.title == 'home_duotone_menu'" class="o-dropdown--menu fuzzy_search_bar dropdown-menu d-block" t-att-class="props.menuClass" t-ref="menuRef">
+                <div class="input-group pl-2 pe-2">
+                    <div class="input-group">
+                        <div class="form-outline appmenu-search-bar d-flex justify-content-between">
+                            <input type="search" id="appmenu-search-input" class="form-control" t-on-input="onClickSearch">
+                            </input>
+                            <label>Search Here...</label>
+                            <span class="focus-border">
+                                <i></i>
+                            </span>
+                            <button type="button" class="btn btn-primary appmenu-search-btn d-none">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="wk_search-results-container ms-1 me-1">
+                    <div class="wk_search-results p-2"/>
+                </div>
+                <t t-slot="default" />
+            </div>
+            <div t-elif="state.open" class="o-dropdown--menu dropdown-menu d-block" t-att-class="props.menuClass" t-ref="menuRef">
+                <t t-slot="default" />
+            </div>
+        </xpath>
+        <xpath expr="//div[@t-ref='menuRef']" position="attributes">
+            <attribute name="t-attf-style">
+	        	background-image: url("{{ backgroundImageUrl }}");z-index:10;
+            </attribute>
+        </xpath>
+    </t>
+
+</templates>

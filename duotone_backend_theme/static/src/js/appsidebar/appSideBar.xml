@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- Copyright (c) 2015-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- "License URL : <https://store.webkul.com/license.html/>" -->
+
+<templates xml:space="preserve">
+
+    <t t-name="duotone_backend_theme.AppSideBar">
+        <div class="wk_duotone_sidebar_panel sidebar_in">
+            <div class="wk_duotone_sidebar">
+					<div class="sb_toggler" t-on-click="_onSbClick">
+						<i class="fa fa-angle-right"></i>
+					</div>
+					<ul class="wk_duotone_sidebar_menu">
+						<t t-foreach="menuService.getApps()" t-as="app" t-key="app.id">
+							<li class="nav-item">
+								<a t-attf-href="#menu_id={{ app.id }}&amp;action_id={{ app.actionID }}" t-att-data-menu-id="app.id" t-att-data-menu-xmlid="app.xmlid" t-att-data-action-id="app.actionID" class="nav-link d-flex" t-att-title="app.name" role="menuitem">
+									<span class="wk_menu_img">
+										<img t-if="app.webIcon.includes('.png')" class="wk_duotone_sidebar_icon" t-attf-src="data:image/png;base64,{{ app.webIconData }}" />
+										<img t-if="app.webIcon.includes('.svg')" class="wk_duotone_sidebar_icon" t-attf-src="data:image/svg+xml;base64,{{app.webIconData}}" />
+									</span>
+									<span class="wk_menu_text font-weight-bold ms-1 pt-2">
+										<t t-esc="app.name"/>
+									</span>
+								</a>
+							</li>
+						</t>
+					</ul>
+				</div>
+        </div>
+    </t>
+</templates>

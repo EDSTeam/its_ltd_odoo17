@@ -1,0 +1,48 @@
+/* Copyright (c) 2015-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) */
+/* See LICENSE file for full copyright and licensing details. */
+/* License URL : <https://store.webkul.com/license.html/> */
+
+@include media-breakpoint-down(sm) {
+    .o_main_navbar {
+    	grid-template-areas: "apps brand systray sections";
+		grid-template-columns: minmax($o-navbar-height, max-content) max-content auto minmax($o-navbar-height, max-content);
+		.o_menu_brand {
+		    display: none;
+		}
+		.o_menu_sections {
+            width: $o-navbar-height;
+        }
+        .o_menu_sections_more {
+            .dropdown-toggle-custom {
+                font-size: $font-size-lg;
+            }
+            .fa-plus:before {
+                content: "\f0c9";
+            }
+        }
+		.o_debug_manager, .o_user_menu, .o_switch_company_menu {
+			> .dropdown-toggle-custom {
+				padding: 0 12px !important;
+			}
+		} 
+		.o_menu_systray {
+		    margin-left: auto;
+		}
+		.o_user_menu {
+			margin: 0;
+		}
+		.o_user_menu > .dropdown-toggle-custom {
+			white-space: nowrap;
+			&::before, &::after {
+			    content: normal;
+			}
+			.oe_topbar_name {
+			    display: none;
+			}
+		}
+		.show .dropdown-menu {
+			@include full-screen-menu();
+			font-size: $font-size-lg;
+		}
+    }
+}

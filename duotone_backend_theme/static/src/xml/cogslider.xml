@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-name="duotone_backend_theme.ModalPanel">
+        <div>
+            <div class="accordion" id="cog-accordian">
+                <div class="card">
+                    <div class="card-header" id="wk_backgroundColor" data-bs-toggle="collapse" data-bs-target="#wk_backgroundColorCollapse" aria-expanded="true" aria-controls="wk_backgroundColorCollapse">
+                        <t t-set="colorPanel" t-value="['#D11A30', '#0EB70E', '#F77DBA', '#673FDD', '#2FC1EA', '#648EEC', '#868282', '#5f5e97']"/>
+                        <h5 class="mb-0">
+                            <button class="btn btn-link" type="button">
+                                        Background Color
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="wk_backgroundColorCollapse" class="collapse show" aria-labelledby="wk_backgroundColor" data-bs-parent="#cog-accordian">
+                        <div class="card-body">
+                            <div class="row me-2">
+                                <t t-foreach="colorPanel" t-as="color" t-key="color">
+                                    <div class="col-3 test">
+                                        <a t-on-click="_set_background_color">
+                                            <span t-att-data-color="color" t-attf-style="background-color:#{color}" />
+                                        </a>
+                                    </div>
+                                </t>
+                            </div>
+                        </div>
+                        <hr />
+                        <div class="card-body color_input">
+                            <span>
+                                                Customize Color
+                                <input type="color" value="#ffffff" t-on-change="_set_background_input_color"/>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="wk_foregoundColor" data-bs-toggle="collapse" data-bs-target="#wk_foregoundColorCollapse" aria-expanded="true" aria-controls="wk_foregoundColorCollapse">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link" type="button">
+                                        Foreground Color
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="wk_foregoundColorCollapse" class="collapse" aria-labelledby="wk_foregoundColor" data-bs-parent="#cog-accordian">
+                        <div class="card-body">
+                            <div class="row me-2">
+                                <t t-foreach="colorPanel" t-as="color" t-key="color">
+                                    <div class="col-3 test">
+                                        <a t-on-click="_set_foreground_color">
+                                            <span t-att-data-color="color" t-attf-style="background-color:#{color}" />
+                                        </a>
+                                    </div>
+                                </t>
+                            </div>
+                        </div>
+                        <hr />
+                        <div class="card-body color_input">
+                            <span>
+                                                Customize Color
+                                <input type="color" value="#fff" t-on-change="_set_foreground_input_color"/>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" t-on-click="_append_google_fonts" id="wk_fonts" data-bs-toggle="collapse" data-bs-target="#wk_fontCollapse" aria-expanded="true" aria-controls="wk_fontCollapse">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link" type="button">
+                                        Fonts
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="wk_fontCollapse" class="collapse" aria-labelledby="wk_fonts" data-bs-parent="#cog-accordian">
+                        <div class="card-body">
+                            <t t-set="fonts" t-value="['Roboto', 'Open Sans', 'Lato', 'Koho', 'Oxygen', 'Raleway', 'Montserrat', 'Noto Sans']"/>
+                            <a t-foreach="fonts" t-as="font" t-key="font" t-on-click="_set_font">
+                                <span t-att-data-font="font" t-attf-style="font-family:#{font}">
+                                    <t t-esc="font"/>
+                                </span>
+                            </a>
+                        </div>
+                        <div class="d-flex" id="google_parent_div">
+                            <input type="text" class="ms-2 me-2 border mb-2" name="Google Font" placeholder="https://fonts.google.com/specimen/Nunito" id="google_font_input_field"/>
+                            <span class="btn btn-primary btn-sm border mb-2" id="google_font_add_button" t-on-click="_apply_google_font">Add</span>
+                        </div>
+                        <div class="d-flex ps-2 pb-2" id="google_font_link">
+                            <span>Select one font on <a href="https://fonts.google.com/" target="_new">fonts.google.com</a> and copy paste the address of the font page here.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="wk_buttons" data-bs-toggle="collapse" data-bs-target="#wk_BackgroundImageCollapse" aria-expanded="true" aria-controls="wk_BackgroundImageCollapse">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link" type="button">
+                                        Background Image
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="wk_BackgroundImageCollapse" class="collapse" aria-labelledby="wk_buttons" data-bs-parent="#cog-accordian">
+                        <div class="card-body">
+                            <img class="wk-cog-img" src="" />
+                            <!-- if we want to give option of remove image from website -->
+                            <div class="img-remove">
+                                <i class="fa fa-remove" t-on-click="_remove_background_image"></i>
+                            </div>
+                            <div class="input-group">
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input form-control" id="input_file" t-on-change="_set_browse_background_image"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="wk_transparency" data-bs-toggle="collapse" data-bs-target="#wk_bgtransparency" aria-expanded="true" aria-controls="wk_bgtransparency">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link" type="button">
+                                        Background Transparency
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="wk_bgtransparency" class="collapse" aria-labelledby="wk_transparency" data-bs-parent="#cog-accordian">
+                        <div class="card-body">
+                            <input type="range" name="points" min="1" max="10" value='10' class="wk-slider" t-on-change="_set_transparency"/>
+                            <span class="wk-range"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="wk_buttons" data-bs-toggle="collapse" data-bs-target="#wk_buttonCollapse" aria-expanded="true" aria-controls="wk_buttonCollapse">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link" type="button" data-bs-toggle="collapse">
+                                        Buttons
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="wk_buttonCollapse" class="collapse" aria-labelledby="wk_buttons" data-bs-parent="#cog-accordian">
+                        <div class="card-body">
+                            <div class="row me-2">
+                                <t t-set="buttons" t-value="['Basic', 'Dynamic', 'Leaf', 'Halo', 'Pill', 'Default']"/>
+                                <div t-foreach="[1, 2, 3, 4, 5, 6]" class="parent col-4" t-as="val" t-key="val">
+                                    <button t-att-data-btn_type= "val" t-attf-class="btn wk-button-#{val}" t-on-click="_set_button">
+                                        <t t-esc="buttons[val-1]"/>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </t>
+    <t t-name="duotone_backend_theme.CogSlider">
+        <t t-if="isUserAdmin">
+
+            <div class="dropdown duotone-config-panel">
+                <!-- <button class="btn dropdown-toggle-custom text-light" data-bs-toggle="modal" data-bs-target="#wk_cog-dropdown" data-bs-whatever="@mdo"> -->
+                <button class="btn dropdown-toggle-custom" t-on-click="_openConfigPanel">
+                    <i class="fa fa fa-cog" />
+                </button>
+
+                <!-- <a class="dropdown-toggle-custom" id="dropdownMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-spin fa fa-cog" />
+                </a> -->
+                <!-- class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"> -->
+
+                <div class="modal fade right" id="wk_cog-dropdown" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" aria-labelledby="dropdownMenu" id="wk_cog-dropdown"> -->
+                    <div class="modal-dialog">
+                        <div class="modal-content p-2">
+                            <div class="mt-2 mb-2">
+                                <div class="float-end border me-1 reload-page" t-on-click="_reloadPage">
+                                    <span class="fa fa-spinner mx-2"></span>
+                                    <span class="pe-2">Refresh</span>
+                                </div>
+                            </div>
+                            <t t-call="duotone_backend_theme.ModalPanel"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </t>
+</templates>
