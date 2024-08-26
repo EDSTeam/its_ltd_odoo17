@@ -1,0 +1,135 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* sh_merge_purchase_order
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-10-17 07:46+0000\n"
+"PO-Revision-Date: 2020-10-17 07:46+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: sh_merge_purchase_order
+#: model_terms:ir.ui.view,arch_db:sh_merge_purchase_order.sh_merge_purchase_order_wizard_form
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: sh_merge_purchase_order
+#: model:ir.model.fields.selection,name:sh_merge_purchase_order.selection__sh_mpo_merge_purchase_order_wizard__merge_type__cancel
+msgid "Cancel Other Purchase Orders"
+msgstr "Annuler d'autres commandes d'achat"
+
+#. module: sh_merge_purchase_order
+#: model:ir.model.fields,field_description:sh_merge_purchase_order.field_sh_mpo_merge_purchase_order_wizard__create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: sh_merge_purchase_order
+#: model:ir.model.fields,field_description:sh_merge_purchase_order.field_sh_mpo_merge_purchase_order_wizard__create_date
+msgid "Created on"
+msgstr "Créé sur"
+
+#. module: sh_merge_purchase_order
+#: model:ir.model.fields,field_description:sh_merge_purchase_order.field_sh_mpo_merge_purchase_order_wizard__display_name
+msgid "Display Name"
+msgstr "Afficher un nom"
+
+#. module: sh_merge_purchase_order
+#: model:ir.model.fields.selection,name:sh_merge_purchase_order.selection__sh_mpo_merge_purchase_order_wizard__merge_type__nothing
+msgid "Do Nothing"
+msgstr "Ne fais rien"
+
+#. module: sh_merge_purchase_order
+#: model:ir.model.fields,field_description:sh_merge_purchase_order.field_sh_mpo_merge_purchase_order_wizard__id
+msgid "ID"
+msgstr "identifiant"
+
+#. module: sh_merge_purchase_order
+#: model:ir.model.fields,field_description:sh_merge_purchase_order.field_sh_mpo_merge_purchase_order_wizard____last_update
+msgid "Last Modified on"
+msgstr "Dernière modification sur"
+
+#. module: sh_merge_purchase_order
+#: model:ir.model.fields,field_description:sh_merge_purchase_order.field_sh_mpo_merge_purchase_order_wizard__write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: sh_merge_purchase_order
+#: model:ir.model.fields,field_description:sh_merge_purchase_order.field_sh_mpo_merge_purchase_order_wizard__write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: sh_merge_purchase_order
+#: model_terms:ir.ui.view,arch_db:sh_merge_purchase_order.sh_merge_purchase_order_wizard_form
+msgid "Merge"
+msgstr "Fusionner"
+
+#. module: sh_merge_purchase_order
+#: model:ir.model,name:sh_merge_purchase_order.model_sh_mpo_merge_purchase_order_wizard
+msgid "Merge Purchase Order Wizard"
+msgstr "Fusionner l'assistant de commande d'achat"
+
+#. module: sh_merge_purchase_order
+#: model:ir.actions.act_window,name:sh_merge_purchase_order.sh_merge_purchase_order_multi_action
+#: model_terms:ir.ui.view,arch_db:sh_merge_purchase_order.sh_merge_purchase_order_wizard_form
+msgid "Merge Purchase Orders"
+msgstr "Fusionner des commandes d'achat"
+
+#. module: sh_merge_purchase_order
+#: model:ir.model.fields,field_description:sh_merge_purchase_order.field_sh_mpo_merge_purchase_order_wizard__merge_type
+msgid "Merge Type"
+msgstr "Type de fusion"
+
+#. module: sh_merge_purchase_order
+#: code:addons/sh_merge_purchase_order/wizard/merge_purchase_order.py:0
+#, python-format
+msgid ""
+"Please Select atleast two Requests for Quotation to perform merge operation."
+msgstr ""
+"Veuillez sélectionner au moins deux demandes de devis pour effectuer une opération de fusion."
+
+#. module: sh_merge_purchase_order
+#: code:addons/sh_merge_purchase_order/wizard/merge_purchase_order.py:0
+#, python-format
+msgid ""
+"Programming error: wizard action executed without active_ids in context."
+msgstr ""
+"Erreur de programmation: Action de l'assistant exécutée sans actif_ids dans le contexte."
+
+#. module: sh_merge_purchase_order
+#: model:ir.model.fields,field_description:sh_merge_purchase_order.field_sh_mpo_merge_purchase_order_wizard__purchase_order_id
+msgid "Purchase Order"
+msgstr "Bon de commande"
+
+#. module: sh_merge_purchase_order
+#: model:ir.model.fields,field_description:sh_merge_purchase_order.field_sh_mpo_merge_purchase_order_wizard__purchase_order_ids
+msgid "Purchase Orders"
+msgstr "Acheter en ligne"
+
+#. module: sh_merge_purchase_order
+#: model:ir.model.fields.selection,name:sh_merge_purchase_order.selection__sh_mpo_merge_purchase_order_wizard__merge_type__remove
+msgid "Remove Other Purchase Orders"
+msgstr "Supprimer d'autres commandes d'achat"
+
+#. module: sh_merge_purchase_order
+#: code:addons/sh_merge_purchase_order/wizard/merge_purchase_order.py:0
+#, python-format
+msgid "Requests for Quotation"
+msgstr "Demandes de devis"
+
+#. module: sh_merge_purchase_order
+#: model:ir.model.fields,field_description:sh_merge_purchase_order.field_sh_mpo_merge_purchase_order_wizard__partner_id
+msgid "Vendor"
+msgstr "Vendeur"
+
+#. module: sh_merge_purchase_order
+#: code:addons/sh_merge_purchase_order/wizard/merge_purchase_order.py:0
+#, python-format
+msgid "You can only merge purchase orders which are in RFQ state"
+msgstr "Vous ne pouvez que fusionner des commandes d'achat qui sont dans l'état RFQ"

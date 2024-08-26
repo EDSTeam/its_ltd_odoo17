@@ -1,0 +1,104 @@
+.o_web_client {
+    background-color: #fff;
+    font-family: lato!important;
+}
+
+.o_action_manager {
+    padding-left: 0;
+}
+
+@media only screen and (min-width: 768px) {
+    .o_action_manager {
+        padding-left: 250px;
+    }
+}
+
+html .o_web_client > .o_action_manager > .o_action > .o_content {
+    background: #f6f6f6;
+}
+
+.o_tooltip.o_tooltip_visible {
+    display: none;
+}
+
+.o_web_client a {
+    color: #666666;
+}
+
+.o_web_client .btn-link {
+    color: #1172c6;
+}
+
+.o_web_client .o_input {
+    padding: 0.375rem 0.75rem;
+    font-size: 12px;
+}
+
+.o_required_modifier.o_input, .o_required_modifier .o_input {
+    background-color: rgba(156, 87, 137 , 0.08)!important;
+}
+
+.o_web_client select.o_input {
+    height: 30px;
+    padding: 0.375rem 0.75rem!important;
+}
+
+.o_field_widget.o_field_many2manytags .o_input_dropdown > input {
+    padding: 0;
+}
+
+.ui-autocomplete .ui-menu-item > a.ui-state-active {
+    background-color: $primary-color;
+}
+
+.o_field_widget.o_field_many2one .o_external_button {
+    color: #1172c6;
+    padding: 0!important;
+}
+
+button.btn {
+    font-size: 12px!important;
+    padding: 6px 12px!important;
+    border: none;
+    box-shadow: none!important;
+    outline: none!important;
+}
+
+button.btn.btn-primary, .btn.btn-outline-primary, .btn.btn-fill-odoo, .btn.btn-odoo {
+    background-color: $primary-color;
+    border-color: $primary-color;
+    color: #fff;
+}
+
+button.btn.btn-primary:hover, button.btn.btn-primary:active, button.btn.btn-primary:focus, 
+.btn.btn-outline-primary:hover, .btn.btn-outline-primary:active, .btn.btn-outline-primary:focus,
+.btn-fill-odoo:hover,.btn-fill-odoo:active,.btn-fill-odoo:focus, 
+.btn-odoo:hover, .btn-odoo:active, .btn-odoo:focus {
+    background-color: darken($primary-color, 10%);
+    border-color: darken($primary-color, 10%);
+    color: #fff;
+}
+
+button.btn.btn-secondary {
+    background-color: transparent;
+    border-color: #fff;
+    color: #1172c6;
+}
+
+button.btn.btn-fill-light, button.btn.btn-light {
+    background-color: #fff;
+    border-color: #fff;
+}
+
+.o_calendar_view .o_calendar_widget .fc-timeGridDay-view .fc-widget-header.fc-today, .o_calendar_view .o_calendar_widget .fc-timeGridWeek-view .fc-widget-header.fc-today {
+    background: #1172c6;
+}
+
+.form-check-input:checked {
+    background-color: #1172c6;
+    border-color: #1172c6;
+}
+
+.form-check:not(:disabled):not(.disabled):hover, .form-check:not(:disabled):not(.disabled):hover .form-check-input, .form-select:not(:disabled):not(.disabled):hover, .form-select:not(:disabled):not(.disabled):hover .form-check-input {
+    border-color: #1172c6;
+}

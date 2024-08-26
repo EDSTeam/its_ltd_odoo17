@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="job_costsheet_create_production_wiz_view" model="ir.ui.view">
+            <field name="name">jobcostsheet.update.wizard.form</field>
+            <field name="model">jobcostsheet.update.wizard</field>
+                <field name="arch" type="xml">
+                    <form string="Create or Edit Material Planning Job Costsheet.">
+                        <p>This wizard will create or edit job cost sheet of material planning on listed job order.</p>
+                        <group>
+                            <group>
+                                <field name="costsheet_type" widget="radio"/>
+                                <field name="project_id"/>
+                                <field name="job_costsheet_id" 
+                                    invisible="costsheet_type not in 'update_costsheet'" required="costsheet_type in 'update_costsheet'" domain="[('project_id','=',project_id),('state','in',('draft','confirm'))]"/>
+                                <!-- <field name="job_costsheet_id" attrs="{'invisible': [('costsheet_type', '!=','update_costsheet' )], 
+                                       'required': [('costsheet_type', '=','update_costsheet')]}" domain="[('project_id','=',project_id),('state','in',('draft','confirm'))]"/> -->
+                            </group>
+                            <group>
+                            </group>
+                        </group>
+                        <footer>
+                            <button name="create_edit_jobcostsheet" type="object" string="Execute" class="btn-primary"/>
+                            or
+                            <button string="Cancel" class="btn-default" special="cancel"/>
+                        </footer>
+                    </form>
+                </field>
+        </record>
+        
+        <record id="action_create_edit_job_costsheet" model="ir.actions.act_window">
+            <field name="name">Create or Edit Job Cost Sheet of Material Planning</field>
+            <field name="res_model">jobcostsheet.update.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="job_costsheet_create_production_wiz_view"/>
+            <!-- <field name="view_type">form</field> -->
+            <field name="target">new</field>
+        </record>
+        
+   </data>
+</odoo>

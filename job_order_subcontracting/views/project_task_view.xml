@@ -1,0 +1,99 @@
+<odoo>
+    <data>
+
+    <record id="job_order_sub_contractor_view" model="ir.ui.view">
+        <field name="name">project.task.form</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project.view_task_form2"/>
+        <field name="arch" type="xml">
+            <xpath expr="//header" position="inside">
+                <!-- <button class="oe_highlight" attrs="{'invisible': [('is_subcontractor_joborder', '!=', False)]}" string="Create Subcontractor Job" name="%(action_job_order_subcontractor)d" type="action" icon="fa-navicon" context="{'default_name': name}">
+                </button>
+                <button class="oe_highlight" string="Create Purchase Order" name="%(action_subcontractor_purchase_order)d" type="action" icon="fa-navicon" context="{'default_partner_id': custom_contractor_partner_id}" attrs="{'invisible': [('is_subcontractor_joborder', '=', False)]}" >
+                </button> -->
+                <button class="oe_highlight" invisible="is_subcontractor_joborder" string="Create Subcontractor Job" name="%(action_job_order_subcontractor)d" type="action" icon="fa-navicon" context="{'default_name': name}">
+                </button>
+                <button class="oe_highlight" string="Create Purchase Order" name="%(action_subcontractor_purchase_order)d" type="action" icon="fa-navicon" context="{'default_partner_id': custom_contractor_partner_id}" invisible="not is_subcontractor_joborder" >
+                </button>
+            </xpath>
+            <xpath expr="//div[@name = 'button_box']" position="inside">
+                <button class="oe_stat_button" type="object" string="Subcontractor Jobs"
+                        name="show_subcontractor_jobs" icon="fa-tasks"
+                        invisible="is_subcontractor_joborder">
+                        <!-- attrs="{'invisible': [('is_subcontractor_joborder', '!=', False)]}"> -->
+                </button>
+                <button class="oe_stat_button" 
+                    invisible="not is_subcontractor_joborder"
+                        type="object" string="Subcontractor Purchases" name="show_purchase_order" icon="fa-shopping-cart">
+                    <!-- attrs="{'invisible': [('is_subcontractor_joborder', '=', False)]}"   -->
+                </button>
+            </xpath>
+            <xpath expr="//page[5]" position="after">
+                <page name="Purchase Order lines" 
+                    string="Purchase Order Lines"
+                    invisible="not is_subcontractor_joborder">
+                    <!-- attrs="{'invisible': [('is_subcontractor_joborder', '=', False)]}" > -->
+                    <field name="purchaseorder_line_ids" nolabel="1">
+                        <tree editable="bottom">
+                            <field name="product_id"/>
+                            <field name="description"/>
+                            <field name="analytic_account_id"/>
+                            <field name="job_cost_id" domain="[('state', '=', 'approve'), ('analytic_id', '=', analytic_account_id)]"/>
+                            <field name="job_cost_line_id" domain="[('direct_id', '=', job_cost_id)]"/>
+                            <field name="quantity"/>
+                            <field name="uom_id"/>
+                            <field name="is_created" column_invisible="True"/>
+                        </tree>
+                    </field>
+                </page>
+            </xpath>
+            <xpath expr = "//page[8]" position="after">
+                <page name="subcontractor info" string="Subcontractor Details" 
+                    invisible="not is_subcontractor_joborder">
+                    <!-- attrs="{'invisible': [('is_subcontractor_joborder', '=', False)]}"> -->
+                    <group>
+                        <group>
+                            <field name="custom_contractor_partner_id"/>
+                            <field name="is_subcontractor_joborder"/>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="action_subcontractor_vendor" model="ir.actions.act_window">
+        <field name="name">Subcontractor Vendors</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.partner</field>
+        <!-- <field name="view_type">form</field> --> <!-- odoo13 -->
+        <field name="domain">[]</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="context">{'search_default_supplier': 1,'default_customer': 0,'default_supplier': 1}</field>
+        <field name="filter" eval="True"/>
+        <field name="help" type="html">
+          <p class="oe_view_nocontent_create">
+            Click to add a contact in your address book.
+          </p><p>
+            Odoo helps you easily track all activities related to
+            a supplier: discussions, history of purchases,
+            documents, etc.
+          </p>
+        </field>
+    </record>
+
+        <record model="ir.actions.act_window" id="action_subcontractor_job">
+            <field name="name">Subcontractor Jobs</field>
+            <field name="res_model">project.task</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <!-- <field name="view_type">form</field> -->  <!-- odoo13 -->
+            <field name="domain">[('is_subcontractor_joborder','=', True)]</field>
+            <field name="context">{'default_is_subcontractor_joborder': True}</field>
+        </record>
+
+    <!--menuitem id="menu_subcontrator_vendor" name="SubContractors"  parent="odoo_job_costing_management.menu_job_managmt" sequence="5"/>
+    <menuitem id="menu_subcontrator_vendor_child" name="SubContractor Vendors"  parent="menu_subcontrator_vendor" action="action_subcontractor_vendor"/-->
+    <menuitem id="menu_subcontrator_job" name="Subcontractor Jobs"  parent="odoo_job_costing_management.job_cost_sub_contractors" action="action_subcontractor_job"/>
+
+    </data>
+</odoo>

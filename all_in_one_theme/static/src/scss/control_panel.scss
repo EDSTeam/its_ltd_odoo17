@@ -1,0 +1,125 @@
+html .o_web_client > .o_action_manager > .o_action > .o_control_panel {
+    padding: 10px 16px;
+}
+
+html .o_web_client > .o_action_manager > .o_action > .o_control_panel > div {
+    margin: 10px 0px;
+}
+
+html .o_web_client > .o_action_manager > .o_action > .o_control_panel .o_cp_top {
+    align-items: center;
+}
+html .o_web_client > .o_action_manager > .o_action > .o_control_panel .o_cp_bottom_right {
+    justify-content: start;
+}
+.o_control_panel .o_cp_bottom_left > .o_cp_action_menus {
+    margin-left: 0;
+}
+.o_control_panel .o_cp_action_menus .fa.fa-cog {
+    display: none;
+}
+
+div.o_control_panel ol.breadcrumb {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+div.o_control_panel ol.breadcrumb li a{
+    color: #001e95;
+}
+
+div.o_control_panel ol.breadcrumb .breadcrumb-item.active {
+    color: $font-color;
+}
+
+div.o_control_panel ol.breadcrumb .breadcrumb-item + .breadcrumb-item {
+    padding-left: 10px;
+}
+
+div.o_control_panel ol.breadcrumb .breadcrumb-item + .breadcrumb-item::before {
+    padding-right: 10px;
+    color: $font-color;
+    content: ">";
+}
+
+html .o_web_client > .o_action_manager > .o_action > .o_control_panel button.btn.o_switch_view.active {
+    color: $primary-color;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+}
+
+div.o_searchview {
+    background-color: transparent;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    height: 40px;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+}
+
+div.o_searchview .o_searchview_icon {
+    top: 14px;
+    right: 8px;
+}
+
+div.o_searchview .o_searchview_autocomplete li.o_selection_focus, .o_searchview .o_searchview_facet .o_searchview_facet_label {
+    background-color: $primary-color!important;
+}
+
+.o_searchview .o_searchview_input_container .o_searchview_facet .o_searchview_facet_label {
+    height: 100%;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    padding: 0 5px;
+}
+
+.o_searchview .o_searchview_input_container .o_searchview_facet {
+    border-radius: 8px;
+    font-size: 12px;
+    border: none;
+    align-items: center;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+}
+
+.o_searchview .o_searchview_facet .o_facet_values {
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border: none;
+}
+
+.o_searchview .o_searchview_input_container .o_searchview_facet .o_facet_remove {
+    font-size: 10px;
+}
+
+html .o_web_client > .o_action_manager > .o_action > .o_control_panel .o_cp_bottom_left {
+    width: 40%;
+}
+
+html .o_web_client > .o_action_manager > .o_action > .o_control_panel .o_cp_bottom_right, .o_control_panel .o_cp_bottom_right {
+    width: 60%;
+    justify-content: end;
+    align-items: center;
+}
+
+html .o_web_client > .o_action_manager > .o_action > .o_control_panel .o_cp_bottom_right .o_search_options {
+    flex-grow: unset;
+}
+
+html .o_web_client > .o_action_manager > .o_action > .o_control_panel .o_cp_bottom_right > .o_cp_pager, .o_control_panel .o_cp_bottom_right > .o_cp_pager {
+    font-size: 11px;
+    margin: 0;
+}
+
+.o_action.o_view_controller.o_form_view .o_cp_bottom_right {
+    flex-direction: row-reverse;
+}
+
+.o_action.o_view_controller.o_form_view .o_cp_bottom_right .o_cp_action_menus {
+    order: 1;
+}
+
+div.o_form_status_indicator {
+    margin-left: auto!important;
+}

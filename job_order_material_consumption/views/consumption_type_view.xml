@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="consumption_type_form_view" model="ir.ui.view">
+            <field name="name">Consumption Type Form View</field>
+            <field name="model">consumption.type</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        
+        <record id="consumption_type_tree_view" model="ir.ui.view">
+            <field name="name">Consumption Type Tree View</field>
+            <field name="model">consumption.type</field>
+            <field name="priority">4</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                </tree>
+          </field>
+        </record>
+        
+        <record model="ir.actions.act_window" id="action_consumption_type">
+              <field name="name">Material Consumption Types</field>
+              <field name="res_model">consumption.type</field>
+              <!--<field name="view_type">form</field>-->
+              <field name="view_mode">tree,form</field>
+        </record>
+                        
+        <menuitem id="menu_consumption_type" 
+                        name="Material Consumption Types" 
+                        parent="odoo_job_costing_management.menu_job_cost_configuration"
+                        action="action_consumption_type"
+                        sequence='3'/>
+    </data>
+</odoo>

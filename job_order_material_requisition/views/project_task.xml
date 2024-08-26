@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="view_task_form2_inherit_requisition_material">
+        <field name="name">project.task.view</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project.view_task_form2"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form/header/field[@name='stage_id']" position="before">
+                 <button string="Create Material Requisition" name="%(action_material_requisition_wiz_job_order)d" type="action" 
+                         class="oe_highlight"/>
+             </xpath>
+             <xpath expr="//page[@name='job_cost_task_material']//tree//field[@name='product_uom']" position="after">
+                <field name="requisition_line" />
+            </xpath>
+            <!--  <xpath expr="//page[@name='job_cost_task_material']//tree//field[@name='product_uom']" position="after">
+                <field name="requisition_type" />
+            </xpath> -->
+        </field>
+     </record>
+    </data>
+</odoo>
+
+        

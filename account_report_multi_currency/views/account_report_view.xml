@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="account_report_form" model="ir.ui.view">
+        <field name="name">account.report.form.kanak</field>
+        <field name="model">account.report</field>
+        <field name="inherit_id" ref="account_reports.account_report_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//page[last()]/group//group[last()]" position="after">
+                <group string="Multi Currency">
+                    <field name="curr_conversation" />
+                    <field name="curr_currency_id"
+                        invisible="curr_conversation == False"
+                        required="curr_conversation == True" />
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>

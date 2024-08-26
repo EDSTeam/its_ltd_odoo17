@@ -1,0 +1,5 @@
+id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
+access_subcontractor_order_line_employee,subcontractor_order_line_employee,model_custom_contract_po_line,base.group_user,1,0,0,0
+access_subcontractor_order_line_project_user,subcontractor_order_line_project_user,model_custom_contract_po_line,project.group_project_user,1,1,1,1
+access_sub_contractor,access_sub_contractor,model_sub_contractor,project.group_project_user,1,1,1,0
+access_subcontractor_purchase_order,access_subcontractor_purchase_order,model_subcontractor_purchase_order,project.group_project_user,1,1,1,0

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+   <data noupdate="1">
+
+        <record id="email_subcontractor_template" model="mail.template">
+           <field name="name">Sub Contractor Notification - Send by Email</field>
+           <field name="email_from">${object.company_id.email}</field>
+           <field name="subject">New Sub Contractor Job: ${object.name}</field>
+           <field name="email_to">${object.partner_id.email}</field>
+           <field name="model_id" ref="project.model_project_task"/>
+           <field name="auto_delete" eval="True"/>
+           <field name="body_html"><![CDATA[
+            Dear ${object.partner_id.name},
+            <p>You have new sub-contract job order.
+            <p>To see job order please followe below link:
+              <br/><br/>
+            <p>
+              <a style="padding: 8px 30px 8px 30px;border-radius: 6px;border: 1px solid #CCCCCC;background:#008080;margin-left: 2px;text-decoration: none;color:#FFFFFF;" href="${ctx['url']}">Sub Contract</a>
+            <p>
+              <br/>
+              Thanks,
+            <br/>
+            <!-- FOOTER -->
+              <tr>
+                <td align="center" style="min-width: 590px;">
+                  <table width="590" border="0" cellpadding="0" bgcolor="#875A7B" style="min-width: 590px; background-color: rgb(135,90,123); padding: 20px; border-collapse:separate;">
+                    <tr>
+                      <td valign="middle" align="left" style="color: #fff; padding-top: 10px; padding-bottom: 10px; font-size: 12px;">
+                        ${object.company_id.name}<br/>
+                        ${object.company_id.phone or ''}
+                      </td>
+                      <td valign="middle" align="right" style="color: #fff; padding-top: 10px; padding-bottom: 10px; font-size: 12px;">
+                        % if object.company_id.email:
+                        <a href="mailto:${object.company_id.email}" style="text-decoration:none; color: white;">${object.company_id.email}</a><br/>
+                        % endif
+                        % if object.company_id.website:
+                            <a href="${object.company_id.website}" style="text-decoration:none; color: white;">
+                                ${object.company_id.website}
+                            </a>
+                        % endif
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <td align="center">
+                    Powered by <a target="_blank" href="https://www.odoo.com">Odoo</a>.
+                </td>
+              </tr> 
+           ]]>
+           </field>
+        </record>
+
+    </data>
+</odoo>
+

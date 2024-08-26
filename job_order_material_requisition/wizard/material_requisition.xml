@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="wiz_material_requisition_view_job_order" model="ir.ui.view">
+            <field name="name">material.purchase.requisition.wizard</field>
+            <field name="model">material.purchase.requisition.wizard</field>
+                <field name="arch" type="xml">
+                    <form string="Material Requisition">
+                        <group>
+                            <group>
+                                <field name="employee_id"/>
+                                <field name="material_requisition" invisible="operation_type not in 'exist'" required="operation_type in 'exist'"/>
+                                    <!-- attrs="{'invisible': [('operation_type', '!=', 'exist')],
+                                'required': [('operation_type', '=', 'exist')]}"/> -->
+                            </group>
+                            <group>
+                                <field name="operation_type"/>
+                            </group>
+                        </group>
+                        <footer>
+                            <button name="action_create_reservation" type="object" string="Create Requisition" class="btn-primary"/>
+                            <!-- or -->
+                            <button string="Cancel" class="oe_link" special="cancel" />
+                        </footer>
+                    </form>
+                </field>
+        </record>
+        
+        <record id="action_material_requisition_wiz_job_order" model="ir.actions.act_window">
+            <field name="name">Material Purchase Requisition</field>
+            <field name="res_model">material.purchase.requisition.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="wiz_material_requisition_view_job_order"/>
+            <!-- <field name="view_type">form</field> -->
+            <field name="target">new</field>
+        </record>
+   </data>
+</odoo>
+
+

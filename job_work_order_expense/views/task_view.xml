@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="job_work_task_form_view" model="ir.ui.view">
+            <field name="name">Projcet task Hr Expense</field>
+            <field name="model">project.task</field>
+            <field name="inherit_id" ref="project.view_task_form2"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@name='button_box']" position="inside">
+                    <button class="oe_stat_button" string="Expenses" name="action_expense_view" type="object" icon="fa-money">
+                    </button>
+                    <button class="oe_stat_button" string="Expense Sheets" name="action_expense_sheets_view" type="object" icon="fa-money">
+                    </button>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

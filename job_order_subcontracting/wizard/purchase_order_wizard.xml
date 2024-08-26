@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record model ="ir.ui.view" id="subcontractor_purchase_order_wizard">
+           <field name="name">purchase.order.wizard</field>
+           <field name="model">subcontractor.purchase.order</field>
+           <field name="arch" type="xml">
+               <form string="Subcontractor Purchase Order wizard">
+                   <separator string="This wizard will create purchase order for subcontractor."/>
+                   <group>
+                        <group>
+                            <!-- <field name="partner_id" domain="[('supplier','=', True)]"/> -->
+                            <field name="partner_id"/> <!-- odoo13 -->
+                        </group>
+                   </group>
+                   <footer>
+                        <button string="Create" name="create_purchase_order" type="object" class="oe_highlight"/>
+                        <!-- or -->
+                        <button string="Cancel" class="btn-default" special="cancel"/>
+                   </footer>
+               </form>
+           </field>
+       </record>
+
+       <record model="ir.actions.act_window" id="action_subcontractor_purchase_order">
+           <field name="name">Create Subcontractor Purchase Order</field>
+           <field name="res_model">subcontractor.purchase.order</field>
+           <field name="view_mode">form</field>
+           <field name="target">new</field>
+       </record>
+
+    </data>
+</odoo>

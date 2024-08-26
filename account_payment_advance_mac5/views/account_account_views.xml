@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_account_list" model="ir.ui.view">
+        <field name="name">account.account.payment.advance.view.tree</field>
+        <field name="model">account.account</field>
+        <field name="inherit_id" ref="account.view_account_list"/>
+        <field name="arch" type="xml">
+            <field name="reconcile" position="before">
+                <field name="used_for_advance_payment" widget="boolean_toggle" invisible="account_type not in ('asset_prepayments', 'liability_current')"/>
+            </field>
+        </field>
+    </record>
+
+</odoo>

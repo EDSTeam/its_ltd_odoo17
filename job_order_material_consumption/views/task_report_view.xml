@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="task_report_id_inherit_report_view" inherit_id = "odoo_job_costing_management.task_report_id">
+            <xpath expr="//div[@class='page']/div/t[@t-if='doc.consumed_material_ids']" position="replace">
+                <t t-if="doc.stock_move_id">
+                    <h3>Consumed Materials</h3>
+                    <table class="table table-responsive" name="table_5">
+                        <tr>
+                            <th>Product </th>
+                            <th>Description </th>
+                            <th class="text-right">Quantity</th>
+                            <th>Unit of Measure</th>
+                        </tr>
+                        <t t-foreach="doc.stock_move_id" t-as="stocks_move">
+                            <tr>
+                                <td><span t-field="stocks_move.product_id.name"/></td>
+                                <td><span t-field="stocks_move.name"/></td>
+                                <td class="text-right"><span t-field="stocks_move.product_uom_qty"/></td>
+                                <td><span t-field="stocks_move.product_uom.name"/></td>
+                            </tr>
+                        </t>
+                    </table>
+                </t>
+            </xpath>
+        </template>
+    </data>
+</odoo>
+

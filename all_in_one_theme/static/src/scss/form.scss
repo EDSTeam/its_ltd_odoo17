@@ -1,0 +1,197 @@
+.o_form_view .o_form_statusbar {
+    padding: 0.75rem 1rem!important;
+    margin: 0!important;
+    background: #fff;
+}
+
+.o_form_view .o_form_statusbar > .o_statusbar_buttons > .btn {
+    margin: 0 5px;
+}
+
+.btn-primary, .btn-secondary:not(.dropdown-toggle):not(.dropdown-item), .btn-secondary.o_arrow_button:not(.dropdown-item) {
+    text-transform: capitalize!important;
+}
+
+.o_field_statusbar_duration > .o_statusbar_status > .o_arrow_button.o_arrow_button_current:not(.d-none):disabled {
+    background-color: #e2eef8;
+    color: $primary-color;
+    margin-right: 1rem;
+}
+
+.o_field_statusbar > .o_statusbar_status > .o_arrow_button:not(.d-none):not(.o_first):hover:after, 
+.o_field_statusbar_duration > .o_statusbar_status > .o_arrow_button:not(.d-none):not(.o_first):hover:after, 
+.o_field_statusbar > .o_statusbar_status > .o_arrow_button:not(.d-none):not(.o_last):hover:after, 
+.o_field_statusbar_duration > .o_statusbar_status > .o_arrow_button:not(.d-none):not(.o_last):hover:after, 
+.o_field_statusbar > .o_statusbar_status > .o_arrow_button.o_arrow_button_current:not(.d-none):disabled:after, 
+.o_field_statusbar_duration > .o_statusbar_status > .o_arrow_button.o_arrow_button_current:not(.d-none):disabled:after, 
+.o_field_statusbar > .o_statusbar_status > .o_arrow_button:not(.d-none):active:not(.o_first):after, 
+.o_field_statusbar_duration > .o_statusbar_status > .o_arrow_button:not(.d-none):active:not(.o_first):after {
+    border-left-color: transparent!important;
+}
+
+.o_field_statusbar > .o_statusbar_status > .o_arrow_button:not(.d-none):not(.o_first):before, 
+.o_field_statusbar_duration > .o_statusbar_status > .o_arrow_button:not(.d-none):not(.o_first):before, 
+.o_field_statusbar > .o_statusbar_status > .o_arrow_button:not(.d-none):not(.o_first):after, 
+.o_field_statusbar_duration > .o_statusbar_status > .o_arrow_button:not(.d-none):not(.o_first):after, 
+.o_field_statusbar > .o_statusbar_status > .o_arrow_button:not(.d-none):not(.o_last):before, 
+.o_field_statusbar_duration > .o_statusbar_status > .o_arrow_button:not(.d-none):not(.o_last):before, 
+.o_field_statusbar > .o_statusbar_status > .o_arrow_button:not(.d-none):not(.o_last):after, 
+.o_field_statusbar_duration > .o_statusbar_status > .o_arrow_button:not(.d-none):not(.o_last):after {
+    border-left: none!important;
+}
+
+.o_field_statusbar_duration > .o_statusbar_status > .o_arrow_button.o_arrow_button_current:not(.d-none):disabled:before {
+    border-left: 0.75rem solid #e2eef8!important;
+}
+
+.o_field_statusbar_duration > .o_statusbar_status > .o_arrow_button:not(.d-none):not(.o_first):before,
+.o_field_statusbar_duration > .o_statusbar_status > .o_arrow_button:not(.d-none):not(.o_first):before{
+    border-left: none;
+    right: -0.75rem;
+}
+
+.o_field_statusbar > .o_statusbar_status > .o_arrow_button.o_arrow_button_current.disabled {
+    color: $primary-color;
+    background-color: #f5f6fa;
+}
+
+.o_field_statusbar > .o_statusbar_status > .o_arrow_button:not(.disabled):hover:after, .o_field_statusbar > .o_statusbar_status > .o_arrow_button:not(.disabled):active:after, .o_field_statusbar > .o_statusbar_status > .o_arrow_button:not(.disabled):focus:after {
+    border-left-color: #fff;
+}
+
+.o_form_view .oe_button_box {
+    box-shadow: none;
+}
+
+.o-form-buttonbox .btn.oe_stat_button {
+    padding-top: 0!important;
+    padding-bottom: 0!important;
+}
+
+.o-form-buttonbox .oe_stat_button .o_button_icon {
+    color: #001e95;
+}
+
+.o_form_view .oe_button_box .btn.oe_stat_button > .o_stat_info .o_stat_value, .o_form_view .oe_button_box .btn.oe_stat_button > span .o_stat_value {
+    font-weight: 500;
+    color: $font-color;
+}
+
+.o_form_view .oe_button_box .btn.oe_stat_button > .o_stat_info .o_stat_text, .o_form_view .oe_button_box .btn.oe_stat_button > span .o_stat_text {
+    font-weight: 700;
+}
+
+.o_form_view .oe_button_box.o_not_full .oe_stat_button {
+    border-bottom: 1px solid #ced4da;
+}
+
+.o_form_view .o_form_sheet_bg {
+    background: #f6f6f6;
+    border-bottom: 1px solid #f6f6f6;
+}
+
+.oe_title h1 {
+    font-size: 20px;
+}
+
+.o_form_view .o_group .o_td_label .o_form_label {
+    font-weight: 600;
+    font-size: 12px;
+}
+
+.o_form_view .o_group .o_td_label + td {
+    padding: 0px 16px;
+    font-size: 12px;
+}
+
+.o_form_view .o_group .o_td_label {
+    border-right: none;
+}
+
+.o_form_view .o_group.o_inner_group > tbody > tr > td.o_td_label {
+    padding: 0 15px;
+}
+
+.o_form_view .o_group > tbody > tr > td.o_td_label label, .o_form_view .o_group > tbody > tr > td.o_td_label span {
+    padding-bottom: 10px;
+}
+
+.o_form_view .o_group > tbody > tr > td.o_td_label span b {
+    font-weight: 700;
+}
+
+.o_form_view .o_form_uri {
+    color: $font-color;
+}
+
+.o_form_view .o_form_uri > span:first-child {
+    color: $font-color;
+}
+
+.o_form_view .o_form_uri:hover {
+    color: $primary-color;
+}
+
+.o_form_view .o_horizontal_separator {
+    color: $font-color;
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.o_form_view .oe_avatar > img {
+    max-width: 100px;
+    max-height: 100px;
+    border: none;
+    border-radius: 50%;
+}
+
+.nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
+    color: #001e95;
+    font-weight: 600;
+    border-color: transparent;
+    border: none;
+    border-bottom: 2px solid #001e95 !important;
+}
+
+.nav-tabs .nav-item .nav-link {
+    padding: 1rem 1.5rem;
+}
+
+.nav-tabs .nav-link:hover, .nav-tabs .nav-link:focus {
+    border-color: transparent;
+}
+
+.o_FormRenderer_chatterContainer {
+    max-width: 100%;
+    padding: 0 20px 20px;
+    background: #f6f6f6;
+}
+
+.o_ChatterContainer {
+    background: #fff;
+    border: 1px solid #c8c8d3;
+    padding: 1rem;
+}
+
+.o_Message {
+    padding: 2rem 0;
+}
+
+.o_Message.o-not-discussion {
+    background-color: #fff;
+    border-bottom: none;
+}
+
+.o_MessageList_separatorLine {
+    border-top: 1px dashed rgba(0, 0, 0, 0.1);
+}
+
+button.o_ChatterTopbar_button.o_ChatterTopbar_buttonAddAttachments.btn.btn-light.btn-primary {
+    color: unset;
+    background-color: unset;
+}
+
+.o-mail-Chatter-topbar.d-flex.flex-shrink-0.flex-grow-0.px-3.overflow-x-auto { 
+    padding-right: 0!important; 
+} 

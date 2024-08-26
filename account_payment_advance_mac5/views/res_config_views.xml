@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_account_config_settings_advance_payment_form" model="ir.ui.view">
+        <field name="name">view.account.config.settings.advance.payment.form</field>
+        <field name="model">res.config.settings</field>
+        <field name="priority" eval="50"/>
+        <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <app name="account" position="inside">
+                <block title="Advance Payments" id="account_payment_advance">
+                    <setting string="Default Account" id="account_payment_advance_accounts"
+                             help="Default account to be used for Advance Payments of your company">
+                        <div class="content-group">
+                            <div class="row mt16">
+                                <label for="advance_payment_account_id" string="Incoming Account" class="col-lg-3 o_light_label"/>
+                                <field name="advance_payment_account_id" options="{'no_create_edit': True, 'no_open': True}"
+                                       domain="[('company_id', '=', company_id), ('account_type', '=', 'liability_current'), ('reconcile', '=', True)]"/>
+                            </div>
+                        </div>
+                        <div class="content-group">
+                            <div class="row mt16">
+                                <label for="advance_payment_outgoing_account_id" string="Outgoing Account" class="col-lg-3 o_light_label"/>
+                                <field name="advance_payment_outgoing_account_id" options="{'no_create_edit': True, 'no_open': True}"
+                                       domain="[('company_id', '=', company_id), ('account_type', '=', 'asset_prepayments'), ('reconcile', '=', True)]"/>
+                            </div>
+                        </div>
+                    </setting>
+                    <setting string="Default Journal" id="account_payment_advance_journal"
+                             help="Default journal to be used for Advance Payments of your company">
+                        <div class="content-group">
+                            <div class="row mt16">
+                                <label for="advance_payment_journal_id" string="Journal" class="col-lg-3 o_light_label"/>
+                                <field name="advance_payment_journal_id" options="{'no_create_edit': True, 'no_open': True}"
+                                       domain="[('company_id', '=', company_id)]"/>
+                            </div>
+                        </div>
+                    </setting>
+                </block>
+            </app>
+        </field>
+    </record>
+
+</odoo>

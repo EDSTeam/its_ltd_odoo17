@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record model ="ir.ui.view" id="job_order_subcontractor_wizard">
+            <field name="name">sub.contractor.wizard</field>
+            <field name="model">sub.contractor</field>
+            <field name="arch" type="xml">
+                <form string="Subcontractor">
+                    <separator string="This wizard will create Job Order for Subcontractor."/>
+                    <group>
+                        <group>
+                            <field name="user_id"/>
+                            <field name="name"/>
+                        </group>
+                        <group>
+                            <!-- <field name="partner_id" domain="[('supplier','=', True)]"/> -->
+                            <field name="partner_id"/> <!-- odoo13 -->
+                            <field name="description"/>
+                        </group>
+                    </group>
+                    <footer>
+                        <button string="Create" name="set_subcontractor_job" type="object" class="oe_highlight"/>
+                        <!-- or -->
+                        <button string="Cancel" class="btn-default" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_job_order_subcontractor">
+            <field name="name">Create Subcontractor</field>
+            <field name="res_model">sub.contractor</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+    </data>
+</odoo>

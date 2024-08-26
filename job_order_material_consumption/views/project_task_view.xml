@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_task_form2_inherit_view" model="ir.ui.view">
+            <field name="name">View Task Form2 Inherit View</field>
+            <field name="model">project.task</field>
+            <field name="inherit_id" ref="project.view_task_form2"/>
+            <field name="arch" type="xml">
+                <data>
+                    <xpath expr="//notebook/page[@name='job_cost_task_consume_material']/field[@name='consumed_material_ids']"
+                                position="before">
+                            <field name="stock_move_id" nolabel="1">
+                                <tree>
+                                    <field name="product_id"/>
+                                    <field name="name"/>
+                                    <field name="product_uom_qty"/>
+                                    <field name="product_uom"/>
+                                    <field name='state' invisible='1'/>
+                                    <field name="consumption_type_id"/>
+                                </tree>
+                            </field>
+                    </xpath>
+                    <xpath expr="//field[@name='consumed_material_ids']" position="attributes">
+                        <attribute name="invisible">1</attribute>
+                    </xpath>
+                </data>
+            </field>
+        </record>
+    </data>
+</odoo>    

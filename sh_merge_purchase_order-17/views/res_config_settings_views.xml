@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+	 <record id="merge_purchase_res_config_settings_inherit_view" model="ir.ui.view">
+        <field name="name">purchase.res.config.settings.inherit.view</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="purchase.res_config_settings_view_form_purchase" />
+        <field name="arch" type="xml">
+            <xpath expr="//block[@name='purchase_setting_container']" position="after">
+                <block title="Merge Purchase Order Quantity" name="setting_merge_po_qty">
+                    <setting id="sh_po_sub_merge_qty_options">
+                        <field name="sh_po_sub_merge_qty"/>
+                    </setting>
+                </block>
+            </xpath>
+        </field>
+    </record>
+</odoo>

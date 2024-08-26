@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="sh_product_bundle_wizard_form_view" model="ir.ui.view">
+        <field name="name">sh.product.bundle.wizard.form.view</field>
+        <field name="model">sh.product.bundle.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Add Pack / Bundle">
+                <group>
+                    <group>
+                        <field name="sh_partner_id" />
+                        <field name="sh_bundle_id" />
+                    </group>
+                    <group>
+                        <field name="sh_qty" />
+                        <field name="sh_price" />
+                    </group>
+                </group>
+                <notebook>
+                    <page string="Products">
+                        <field name="sh_bundle_lines">
+                            <tree editable="bottom" create="0">
+                                <field name="sh_product_id" />
+                                <field name="sh_bundle_quantity" />
+                                <field name="sh_bundle_uom" />
+                            </tree>
+                        </field>
+                    </page>
+                </notebook>
+                <footer>
+                    <button string="Add Pack/Bundle" name="action_add_pack" type="object" class="btn-primary" />
+                    or
+                    <button string="Cancel" class="btn-default" special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+    <record id="sh_action_add_pack" model="ir.actions.act_window">
+        <field name="name">Add Pack/Bundle</field>
+        <field name="res_model">sh.product.bundle.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="sh_product_bundle_wizard_form_view" />
+        <field name="target">new</field>
+    </record>
+</odoo>

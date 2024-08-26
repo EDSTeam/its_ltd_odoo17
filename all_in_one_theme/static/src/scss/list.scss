@@ -1,0 +1,81 @@
+.o_list_view .o_list_table thead, .o_list_view .o_list_table tfoot {
+    background: #f5f6fa;
+    color: $font-color;
+    height: 48px;
+}
+
+.o_list_view .o_list_table thead th {
+    vertical-align: middle!important;
+    border: none;
+    padding-left: 32px!important;
+    text-align: left!important;
+}
+
+.o_list_view .o_list_table thead > tr > th:not(.o_list_record_selector) {
+    font-size: 11px;
+    vertical-align: middle!important;
+    border: none;
+}
+
+.o_list_view .o_list_table tbody tr {
+    background: #fff;
+    color: $font-color;
+    height: 48px;
+}
+
+.o_list_view .o_list_table tbody tr:hover {
+    background: #f9f9f9;
+}
+
+.o_list_view .o_list_table.table-hover > tbody > tr:hover > * {
+    --table-accent-bg: unset;
+}
+
+.o_list_view .o_list_table tbody tr td {
+    vertical-align: middle!important;
+    border-top: 1px solid #ddd;
+    padding-left: 32px!important;
+    text-align: left!important;
+}
+
+.o_list_view .o_list_table tbody tr td.o_list_record_remove {
+    padding-left: 16px !important;
+}
+
+.o_list_view .o_list_table tbody > tr > td:not(.o_list_record_selector):not(.o_handle_cell):not(.o_list_button) {
+    font-size: 11px;
+    vertical-align: middle!important;
+}
+
+.o_list_view .o_list_table tfoot > tr > td {
+    vertical-align: middle!important;
+    border-top: 1px solid #ddd;
+    padding-left: 32px!important;
+    text-align: left!important;
+    font-size: 11px;
+}
+
+.o_list_view .o_optional_columns_dropdown_toggle {
+    position: absolute;
+    top: 5px;
+    right: 0px;
+    font-size: 10px;
+}
+
+.o_list_view .o_list_table tr:focus-within, .o_list_view .o_list_table.table-striped tr:focus-within {
+    background-color: #f5f6fa;
+}
+
+.o_list_view .o_list_table thead th:focus-within, .o_list_view .o_list_table tbody.o_keyboard_navigation td:focus-within {
+    background-color: transparent;
+}
+
+.o_list_view .o_list_table tbody > tr.o_group_header .o_group_name {
+    vertical-align: middle!important;
+    font-size: 11px;
+    font-weight: 500;
+}
+
+.o_list_view tbody > tr.o_group_header:focus-within {
+    background-image: none!important;
+}
