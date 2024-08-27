@@ -1,0 +1,23 @@
+.o_pivot table th {
+    background: #f5f6fa!important;
+    color: $font-color!important;
+    height: 48px;
+    border: 1px solid #cacaca!important;
+    font-size: 12px;
+}
+
+.o_pivot table .o_pivot_measure_row {
+    padding: 0 10px;
+    font-weight: 600;
+}
+
+.o_pivot .table-bordered th, .o_pivot .table-bordered td {
+    border: 1px solid #cacaca !important;
+    text-align: left!important;
+    padding: 0 10px;
+    font-size: 11px;
+}
+
+.o_pivot table.o_enable_linking .o_pivot_cell_value:not(.o_empty):hover {
+    color: $primary-color;
+}

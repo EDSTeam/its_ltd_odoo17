@@ -1,0 +1,26 @@
+.o_activity_view > table, .o_activity_view .table-bordered th, .table-bordered td {
+    border: 1px solid #cacaca!important;
+    border-top: none!important;
+    font-size: 11px!important;
+}
+
+.o_activity_view > table thead > tr > th:first-of-type {
+    background: #f5f6fa;
+}
+
+.o_activity_view .o_activity_type_cell {
+    padding: 10px;
+    min-width: 100px;
+    color: $font-color!important;
+    height: 48px;
+    border: 1px solid #cacaca!important;
+    border-top: none!important;
+    font-size: 12px;
+    background: #f5f6fa;
+}
+
+.o_activity_view > table tbody > tr > td, .o_activity_view > table tfoot > tr > td {
+    color: $font-color!important;
+    height: 48px;
+    border: 1px solid #cacaca!important;
+}

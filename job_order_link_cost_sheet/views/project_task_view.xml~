@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <record id="view_task_form2_inherit_joborder_link" model="ir.ui.view">
+            <field name="name">project.task.form.view</field>
+            <field name="model">project.task</field>
+            <field name="inherit_id" ref="project.view_task_form2"/>
+            <field name="arch" type="xml">
+                <xpath expr="//header" position="inside">
+                    <button name="%(action_create_edit_job_costsheet)d" class="oe_highlight"
+                            context="{'default_project_id':project_id}" string="Create / Edit Cost Sheet" 
+                            type="action"/>
+                </xpath>
+                <xpath expr="//page/field/tree/field[@name='product_uom']" position="after">
+                    <field name="custom_material_job_id" readonly="1" invisible="1"/>
+                    <field name="custom_job_cost_id" readonly="1" />
+                    <field name="is_material_created" readonly="1" invisible="1"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_task_form2_inherit_joborder_link_new" model="ir.ui.view">
+            <field name="name">project.task.form.view</field>
+            <field name="model">project.task</field>
+            <field name="inherit_id" ref="project.view_task_form2"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page/field/tree/field[@name='product_id']" position="attributes">
+                    <attribute name="attrs">{'readonly':[('custom_material_job_id','!=',False)]}</attribute>
+                </xpath>
+                <xpath expr="//page/field/tree/field[@name='description']" position="attributes">
+                    <attribute name="attrs">{'readonly':[('custom_material_job_id','!=',False)]}</attribute>
+                </xpath>
+                <xpath expr="//page/field/tree/field[@name='product_uom_qty']" position="attributes">
+                    <attribute name="attrs">{'readonly':[('custom_material_job_id','!=',False)]}</attribute>
+                </xpath>
+                <xpath expr="//page/field/tree/field[@name='product_uom']" position="attributes">
+                    <attribute name="attrs">{'readonly':[('custom_material_job_id','!=',False)]}</attribute>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>
